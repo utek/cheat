@@ -13,6 +13,12 @@ try:
 except ImportError:
     USE_PYGMENTS = False
 
+try:
+    import colorama
+    colorama.init()
+except ImportError:
+    pass
+
 
 # assembles a list of directories containing cheatsheets
 def cheat_directories():
@@ -39,7 +45,8 @@ def cheat_files(cheat_directories):
     for cheat_dir in reversed(cheat_directories):
         cheats.update(dict([(cheat, cheat_dir)
                             for cheat in os.listdir(cheat_dir)
-                            if not cheat.startswith('.')]))
+                            if not (cheat.startswith('.')
+                                    or cheat.startswith('__init__'))]))
     return cheats
 
 
