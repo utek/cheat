@@ -10,7 +10,7 @@ if os.name == "nt":
 
 setup(name='cheat',
       version='1.0.1',
-      description='Create and view interactive cheatsheets on the command-line',
+      description='Create and view interactive cheatsheets on the command-line',  # nopep8
       author='Chris Lane',
       author_email='chris@chris-allen-lane.com',
       url='https://github.com/chrisallenlane/cheat',
